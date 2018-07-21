@@ -1,0 +1,3 @@
+rootProject.name = 'bluetooth5'
+
+include ':app'
