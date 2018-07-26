@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, DeviceEventEmitter, PermissionsAndroid} from 'react-native';
+import {Platform, StyleSheet, Text, View, DeviceEventEmitter, PermissionsAndroid, Alert} from 'react-native';
 import Bridgefy from 'react-native-bridgefy-sdk'
 
 const instructions = Platform.select({
@@ -47,6 +47,7 @@ export default class App extends Component<Props> {
     Bridgefy.init("055a88e3-e730-46a3-b4ae-8154f3bc8000",
       (errorCode, message)=>{
         console.log(errorCode + ":" + message);
+        Alert.alert('Init error:', message)
       },
       (client) => {
         console.log(client);
@@ -103,14 +104,14 @@ export default class App extends Component<Props> {
 
     DeviceEventEmitter.addListener('onStarted', (device)=> {
         console.log('onStarted: '+ JSON.stringify(device));
-
-      var message = {
-        content:{ // Custom content
-          message:"Hello world!!"
-        }
-      };
-      Bridgefy.sendBroadcastMessage(message);
-      console.log('message sent');
+        Alert.alert('onStart:', JSON.stringify(device))
+        // var message = {
+        //   content:{ // Custom content
+        //     message:"Hello world!!"
+        //   }
+        // };
+        // Bridgefy.sendBroadcastMessage(message);
+        // console.log('message sent');
       }
     );
 
@@ -118,6 +119,7 @@ export default class App extends Component<Props> {
         console.log('onStartError: ', error);
         console.log('code: ', error.conde); // error code
         console.log('description', error.description); // Error cause
+        Alert.alert('Start error:', error.conde + error.description)
       }
     );
 
