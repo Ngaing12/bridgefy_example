@@ -4261,6 +4261,10 @@ react-is@^16.4.1:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
 
+"react-native-bridgefy-sdk@git+https://chesnok9@bitbucket.org/bridgefy/react-native-bridgefy-sdk.git":
+  version "0.0.1"
+  resolved "git+https://chesnok9@bitbucket.org/bridgefy/react-native-bridgefy-sdk.git#510c0a71cf022c389052937f762772c3006c6015"
+
 react-native@0.55.3:
   version "0.55.3"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.55.3.tgz#6ff1691bd0645d0480fba16377edb9dce5bd28c4"

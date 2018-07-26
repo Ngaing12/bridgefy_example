@@ -1,3 +1,4 @@
 rootProject.name = 'bluetooth5'
-
+include ':react-native-bridgefy-sdk'
+project(':react-native-bridgefy-sdk').projectDir = new File(settingsDir, '../node_modules/react-native-bridgefy-sdk/android')
 include ':app'
